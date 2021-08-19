@@ -13,4 +13,4 @@
         url_username: admin
         url_password: Dhana@123 
     - name: run java project
-      command: /tmp/java.sh
+      command: /tmp/script.sh args
