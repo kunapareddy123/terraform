@@ -8,9 +8,9 @@
         state: present
     - name: Download artifact test
       get_url:
-        url: http://52.37.61.194:8082/artifactory/myartifactory/org/springframework/samples/spring-petclinic/2.4.5/spring-petclinic-2.4.5.jar
+        url: http://52.37.61.194:8082/artifactory/myartifactory/org/springframework/samples/spring-petclinic/LATEST/spring-petclinic-LATEST.jar
         dest: /tmp
         url_username: admin
         url_password: Dhana@123 
     - name: run java project
-      command: java -jar /tmp/spring-petclinic-2.4.5.jar
+      shell: java -jar /tmp/spring-petclinic-2.4.5.jar
