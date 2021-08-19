@@ -28,6 +28,10 @@ resource "aws_instance" "Ansible" {
     source      = "./deployment.yml"
     destination = "/tmp/deployment.yml"
     }
+    provisioner "file" {
+    source      = "./java.sh"
+    destination = "/tmp/java.sh"
+    }
 
     provisioner "remote-exec" {
     inline = [
