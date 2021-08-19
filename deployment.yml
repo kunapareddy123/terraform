@@ -1,0 +1,16 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: install java
+      yum:
+        name: java-1.8.0-openjdk-devel
+        state: present
+    - name: Download artifact test
+      get_url:
+        url: http://52.37.61.194:8082/artifactory/myartifactory/com/houari/Calculator/1.0-SNAPSHOT/Calculator-1.0-20210819.110915-1.jar
+        dest: /tmp
+        url_username: admin
+        url_password: Dhana@123 
+    - name: run java project
+      command: java -jar /tmp/Calculator-1.0-20210819.110915-1.jar

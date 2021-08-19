@@ -1,0 +1,46 @@
+pipeline
+{
+    agent { label 'terraform' }
+    stages
+    {
+        stage('GIT')
+        {
+            steps
+            {
+                git 'https://github.com/kunapareddy123/Demo.git'
+            }
+        }
+        stage('terraform init')
+        {
+            steps
+            {    
+                sh 'terraform init'
+            }
+        }
+        stage('terraform validate')
+        {
+            steps
+            {
+                sh 'terraform validate .'
+            }
+        }
+        stage('terraform plan')
+        {
+            steps
+            { 
+                withAWS(credentials: 'aws-credentials', region: 'us-west-2'){
+                 sh 'terraform plan -out="aws.plan"'
+            }
+            }
+        }
+        stage('terraform apply')
+        {
+            steps
+            {
+                withAWS(credentials: 'aws-credentials', region: 'us-west-2'){
+                sh 'terraform apply aws.plan'
+                }
+            }
+        }
+    }
+}     
