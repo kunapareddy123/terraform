@@ -1,5 +1,5 @@
 resource "aws_instance" "Ansible" {
-    ami= "ami-090717c950a5c34d3"
+    ami= "ami-0686851c4e7b1a8e1"
     instance_type= "t2.micro"
     key_name= "JenkinsDemo"
     security_groups= ["launch-wizard-1"]

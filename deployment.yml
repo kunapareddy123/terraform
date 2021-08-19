@@ -3,8 +3,8 @@
   remote_user: root
   tasks:
     - name: install java
-      apt:
-        name: openjdk-8-jdk
+      yum:
+        name: java-1.8.0-openjdk-devel
         state: present
     - name: Download artifact test
       get_url:

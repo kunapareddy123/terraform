@@ -6,11 +6,11 @@ sudo service sshd restart
 # change password for root
 sudo echo root:devops | sudo chpasswd 
 # install ansible
-sudo apt-get install epel-release -y
-sudo apt-get install ansible -y
+sudo yum install epel-release -y
+sudo yum install ansible -y
 # create ssh-keygen
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
-sudo apt-get install sshpass -y 
+sudo yum install sshpass -y 
 # copy id to the localhost
 sshpass -p "devops" ssh-copy-id -o StrictHostKeyChecking=no root@localhost
 #Install Java 8 with Ansible roles
