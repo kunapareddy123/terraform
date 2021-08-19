@@ -35,7 +35,7 @@ resource "aws_instance" "Ansible" {
 
     provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/java.sh"
+      "chmod +x /tmp/java.sh",
       "chmod +x /tmp/script.sh",
       "/tmp/script.sh args",
     ]
