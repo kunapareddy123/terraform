@@ -9,7 +9,7 @@ resource "aws_instance" "Ansible" {
 
     connection {
         type= "ssh"
-        user= "ubuntu"
+        user= "centos"
         host= "${aws_instance.Ansible.public_ip}"
         private_key= "${file("./files/JenkinsDemo.pem")}"
              
