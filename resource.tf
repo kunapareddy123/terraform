@@ -1,6 +1,6 @@
 resource "aws_instance" "Ansible" {
     ami= "ami-0686851c4e7b1a8e1"
-    instance_type= "t2.micro"
+    instance_type= "t2.medium"
     key_name= "JenkinsDemo"
     security_groups= ["launch-wizard-1"]
     tags = {
