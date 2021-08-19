@@ -13,4 +13,4 @@
         url_username: admin
         url_password: Dhana@123 
     - name: run java project
-      shell: java -jar /tmp/spring-petclinic-2.4.5.jar
+      shell: java -jar /tmp/spring-petclinic-LATEST.jar
