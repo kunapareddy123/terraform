@@ -28,10 +28,20 @@ resource "aws_instance" "Ansible" {
     source      = "./deployment.yml"
     destination = "/tmp/deployment.yml"
     }
+    provisioner "file" {
+    source      = "./ansible"
+    destination = "/tmp/ansible.yml"
+    }
     provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/script.sh",
       "/tmp/script.sh args",
+    ]
+    }
+     provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/ansible.sh",
+      "/tmp/ansible.sh args",
     ]
     }
   
