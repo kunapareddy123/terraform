@@ -13,3 +13,5 @@ ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 sudo yum install sshpass -y 
 # copy id to the localhost
 sshpass -p "devops" ssh-copy-id -o StrictHostKeyChecking=no root@localhost
+# Execute playbook
+ansible-playbook -i /tmp/hosts /tmp/deployment.yml -v
