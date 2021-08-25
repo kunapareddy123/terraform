@@ -6,9 +6,9 @@
       yum:
         name: java-1.8.0-openjdk-devel
         state: present
-    - name: Download artifact test
+    - name: Download artifact 
       get_url:
-        url: http://54.149.212.87:8082/artifactory/myartifactory/org/springframework/samples/spring-petclinic/LATEST/spring-petclinic-LATEST.jar
+        url: http://35.82.47.107:8082/artifactory/myartifactory/org/springframework/samples/spring-petclinic/LATEST/spring-petclinic-LATEST.jar
         dest: /tmp
         url_username: admin
         url_password: Dhana@123 
