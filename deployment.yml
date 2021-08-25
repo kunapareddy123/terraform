@@ -13,4 +13,7 @@
         url_username: admin
         url_password: Dhana@123 
     - name: run java project
-      shell: java -jar /tmp/spring-petclinic-LATEST.jar
+      shell: "java -jar /tmp/spring-petclinic-LATEST.jar"
+      async: 10
+      poll: 0
+
