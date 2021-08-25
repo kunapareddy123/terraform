@@ -15,5 +15,5 @@
     - name: run java project
       shell: "java -jar /tmp/spring-petclinic-LATEST.jar"
       async: 10
-      poll: 0
+      poll: 2
 
